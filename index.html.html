@@ -1,0 +1,128 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flores Amarillas</title>
+  <style>
+    :root{
+      --bg1:#FFF9E6;
+      --bg2:#FFF3C4;
+      --accent:#F6C84C;
+      --card:#fffefb;
+      --text:#333;
+      --soft:#FFEFA0;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(circle at 10% 10%, var(--bg1), var(--bg2));
+      color:var(--text); -webkit-font-smoothing:antialiased;
+      display:flex;align-items:center;justify-content:center;padding:24px;
+    }
+    .wrap{max-width:1000px;width:100%;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    @media(max-width:880px){.wrap{grid-template-columns:1fr;}}/* Left: escena floral */
+.scene{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));padding:36px;border-radius:18px;box-shadow:0 10px 30px rgba(10,10,10,0.08);position:relative;overflow:hidden}
+.scene .title{font-size:28px;font-weight:700;margin:0 0 12px}
+.scene .subtitle{margin:0 0 20px;color:#6b5b2e}
+.card{background:var(--card);padding:22px;border-radius:14px;min-height:220px;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,0.03)}
+.dedication{font-size:20px;line-height:1.4}
+.author{margin-top:12px;text-align:right;font-size:14px;color:#7a6a44}
+
+/* Floral SVG positioning */
+.flower{position:absolute;transform-origin:center center}
+.f1{left:-40px;top:20px;transform:rotate(-12deg) scale(1.1);opacity:0.98}
+.f2{right:-60px;bottom:10px;transform:rotate(10deg) scale(1.05)}
+.f3{left:10%;bottom:-80px;transform:rotate(8deg) scale(.9)}
+
+/* Animated petals */
+.petal{transform-origin:50% 60%;animation:float 6s ease-in-out infinite}
+.petal:nth-child(1){animation-delay:-1s}
+.petal:nth-child(2){animation-delay:-2s}
+.petal:nth-child(3){animation-delay:-3s}
+.petal:nth-child(4){animation-delay:-1.5s}
+@keyframes float{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
+
+/* Right: editor */
+.panel{background:linear-gradient(180deg,#ffffff, #fffef8);padding:22px;border-radius:12px;box-shadow:0 6px 20px rgba(10,10,10,0.06);border:1px solid rgba(0,0,0,0.03)}
+.panel h3{margin:0 0 12px;font-size:18px}
+label{display:block;font-size:13px;color:#6b5b2e;margin-top:12px}
+input[type=text], textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #efe6c6;background:transparent}
+textarea{min-height:110px;resize:vertical}
+.controls{display:flex;gap:10px;margin-top:16px}
+button{background:var(--accent);border:0;padding:10px 14px;border-radius:10px;color:#2c2307;font-weight:700;cursor:pointer}
+button.secondary{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+.small{font-size:12px;color:#7a6a44;margin-top:8px}
+
+/* Footer note */
+.credit{font-size:12px;color:#6b6b6b;margin-top:10px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="scene">
+      <h1 class="title">Flores Amarillas Para GINA</h1>
+      <p class="subtitle">Esto fue echo para ti tesoro</p><div class="card" id="preview">
+    <!-- Decorative SVG flowers -->
+    <svg class="flower f1" width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#FFD66B"/><stop offset="1" stop-color="#F6C84C"/></linearGradient>
+      </defs>
+      <g transform="translate(100,100)">
+        <g class="petal">
+          <ellipse rx="40" ry="20" fill="url(#g1)" transform="rotate(0) translate(60,0)" opacity="0.98"/>
+        </g>
+        <g class="petal">
+          <ellipse rx="40" ry="20" fill="url(#g1)" transform="rotate(72) translate(60,0)"/>
+        </g>
+        <g class="petal">
+          <ellipse rx="40" ry="20" fill="url(#g1)" transform="rotate(144) translate(60,0)"/>
+        </g>
+        <g class="petal">
+          <ellipse rx="40" ry="20" fill="url(#g1)" transform="rotate(216) translate(60,0)"/>
+        </g>
+        <g class="petal">
+          <ellipse rx="40" ry="20" fill="url(#g1)" transform="rotate(288) translate(60,0)"/>
+        </g>
+        <circle r="18" fill="#FFD23F" stroke="#E6B93B" stroke-width="3"/>
+      </g>
+    </svg>
+
+    <svg class="flower f2" width="140" height="140" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(100,100)">
+        <g class="petal">
+          <ellipse rx="28" ry="14" fill="#FFE07A" transform="rotate(0) translate(50,0)"/>
+        </g>
+        <g class="petal">
+          <ellipse rx="28" ry="14" fill="#FFE07A" transform="rotate(72) translate(50,0)"/>
+        </g>
+        <g class="petal">
+          <ellipse rx="28" ry="14" fill="#FFE07A" transform="rotate(144) translate(50,0)"/>
+        </g>
+        <circle r="12" fill="#FFD23F" stroke="#E6B93B" stroke-width="2"/>
+      </g>
+    </svg>
+
+    <svg class="flower f3" width="180" height="180" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(100,100)">
+        <g class="petal">
+          <ellipse rx="34" ry="16" fill="#FFE89C" transform="rotate(0) translate(55,0)"/>
+        </g>
+        <g class="petal">
+          <ellipse rx="34" ry="16" fill="#FFE89C" transform="rotate(90) translate(55,0)"/>
+        </g>
+        <circle r="14" fill="#FFD23F" stroke="#E6B93B" stroke-width="2"/>
+      </g>
+    </svg>
+
+    <!-- Dedication text -->
+    <div style="position:relative;z-index:2">
+      <div class="dedication" id="dedText">Porque eres única, porque eres bella tal cual una bella princesa, quizá no son de pipa, de cartón o algodón, pero son para ti, parten de mi, de mi mente y mi corazón, espero que esté sea solo el inicio y para el año regalarte algo físico, te quiero, te amo y te extraño, espero haberte alegrado...</div>
+      <div class="author" id="dedAuthor">— Fernando</div>
+    </div>
+  </div>
+</body>
+</html>
